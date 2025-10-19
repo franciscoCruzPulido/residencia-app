@@ -4,6 +4,8 @@ import Dashboard from "../paginas/dashboard";
 import Avisos from "../paginas/avisos";
 import Visitas from "../paginas/visitas";
 import Residentes from "../paginas/residentes";
+import Contacto from "../paginascontacto";
+
 
 export default function Approutes() {
   return (
@@ -19,3 +21,4 @@ export default function Approutes() {
     </BrowserRouter>
   );
 }
+
