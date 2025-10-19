@@ -17,8 +17,11 @@ export default function Approutes() {
         <Route path="/avisos" element={<Avisos />} />
         <Route path="/visitas" element={<Visitas />} />
         <Route path="/residentes" element={<Residentes />} />
+        <Route path="/contacto" element={<Contacto />} />
+
       </Routes>
     </BrowserRouter>
   );
 }
+
 
