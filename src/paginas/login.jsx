@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexxt/AuthContext";
+import { encriptarDato } from "../componentes/seguridad"; 
 
 export default function Login() {
   const [correo, setCorreo] = useState("");
@@ -10,7 +11,13 @@ export default function Login() {
 
   const enviar = (e) => {
     e.preventDefault();
-    if (login(correo, contraseña)) {
+    const contraseñaEncriptada = encriptarDato(contraseña); 
+    console.log("Contraseña encriptada:", contraseñaEncriptada); 
+
+    // Simulación: validamos contra la versión encriptada de "1234"
+    const contraseñaGuardada = encriptarDato("1234");
+    if (correo === "admin@residencia.com" && contraseñaEncriptada === contraseñaGuardada) {
+      login(correo, contraseña);
       navigate("/dashboard");
     } else {
       alert("Datos incorrectos");
@@ -36,3 +43,4 @@ export default function Login() {
     </form>
   );
 }
+
