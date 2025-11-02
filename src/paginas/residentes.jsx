@@ -1,4 +1,3 @@
-// residentes.jsx
 import Tarjetaresidente from "../componentes/tarjetaresidente";
 
 export default function Residentes() {
