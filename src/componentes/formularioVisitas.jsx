@@ -25,4 +25,4 @@ export default function FormularioVisitas() {
       <button type="submit">Registrar</button>
     </form>
   );
-}
+} 
