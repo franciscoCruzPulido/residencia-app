@@ -1,17 +1,29 @@
-import Tarjetadeaviso from "../componentes/tarjetadeaviso";
+import { useEffect, useState } from "react";
 
 export default function Avisos() {
-  const lista = [
-    { id: 1, titulo: "Corte de agua", fecha: "2025-09-10" },
-    { id: 2, titulo: "Junta vecinal", fecha: "2025-09-12" },
-  ];
+  const [avisos, setAvisos] = useState([]);
+
+  useEffect(() => {
+    const avisosGuardados = JSON.parse(localStorage.getItem("avisos")) || [];
+    setAvisos(avisosGuardados);
+  }, []);
 
   return (
     <div>
-      <h2>Avisos</h2>
-      {lista.map((aviso) => (
-        <Tarjetadeaviso key={aviso.id} aviso={aviso} />
-      ))}
+      <h1>Avisos para residentes</h1>
+      {avisos.length === 0 ? (
+        <p>No hay avisos disponibles.</p>
+      ) : (
+        <ul>
+          {avisos.map((aviso, index) => (
+            <li key={index}>
+              <strong>{aviso.titulo}</strong>: {aviso.contenido}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
+
+
