@@ -9,4 +9,4 @@ export function desencriptarDato(datoEncriptado) {
   const claveSecreta = "clave123";
   const bytes = CryptoJS.AES.decrypt(datoEncriptado, claveSecreta);
   return bytes.toString(CryptoJS.enc.Utf8);
-}
+} 
