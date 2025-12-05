@@ -1,14 +1,18 @@
 import Approutes from "./routes/Approutes";
 import "./App.css";
-import Menu from "./componentes/Menu";
+import MenuIntegrador from "./componentes/MenuIntegrador";
+import Menu from "./sprint1/componentes/Menu";
 
 function App() {
   return (
     <div>
-      <Menu />
+      <MenuIntegrador />
+      <Menu /> {}
       <Approutes />
     </div>
   );
 }
 
 export default App;
+
+
